@@ -6,7 +6,7 @@ az ams streaming locator delete -n myLocator -a build18 -g build2018
 
 # Create a new Streaming Locator. Modify the assetName variable to point to the Asset you want to publish
 # This uses the predefined Clear Streaming Only policy, which allows for unencypted deliver over HLS, Smooth and DASH protocols. 
-az ams streaming locator create -n myLocator --asset-name "myAsset-uniqueID" --streaming-policy-name Predefined_DownloadAndClearStreaming  -a build18 -g build2018 
+az ams streaming locator create -n myLocator --asset-name outputAsset1 --streaming-policy-name Predefined_DownloadAndClearStreaming  -a build18 -g build2018 
 
 
 # List the Streaming Endpoints on the account. If this is a new account it only has a 'default' endpoint, which may be stopped.

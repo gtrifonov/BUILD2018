@@ -1845,7 +1845,7 @@
 					"response": []
 				},
 				{
-					"name": "Create or update an Content Key Policy",
+					"name": "Create Content Key Policy (no DRM token)",
 					"request": {
 						"method": "PUT",
 						"header": [
@@ -1865,7 +1865,223 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"description\": \"PolicyDescription\",\r\n    \"options\": [\r\n      {\r\n        \"name\": \"ClearKeyOption\",\r\n        \"configuration\": {\r\n          \"@odata.type\": \"#Microsoft.Media.ContentKeyPolicyClearKeyConfiguration\"\r\n        },\r\n        \"restriction\": {\r\n          \"@odata.type\": \"#Microsoft.Media.ContentKeyPolicyTokenRestriction\",\r\n          \"issuer\": \"urn:issuer\",\r\n          \"audience\": \"urn:audience\",\r\n          \"primaryVerificationKey\": {\r\n            \"@odata.type\": \"#Microsoft.Media.ContentKeyPolicySymmetricTokenKey\",\r\n            \"keyValue\": \"AAAAAAAAAAAAAAAAAAAAAA==\"\r\n          },\r\n          \"restrictionTokenType\": \"Swt\"\r\n        }\r\n      },\r\n      {\r\n        \"name\": \"widevineoption\",\r\n        \"configuration\": {\r\n          \"@odata.type\": \"#Microsoft.Media.ContentKeyPolicyWidevineConfiguration\",\r\n          \"widevineTemplate\": \"{\\\"allowed_track_types\\\":\\\"SD_HD\\\",\\\"content_key_specs\\\":[{\\\"track_type\\\":\\\"SD\\\",\\\"security_level\\\":1,\\\"required_output_protection\\\":{\\\"hdcp\\\":\\\"HDCP_V2\\\"}}],\\\"policy_overrides\\\":{\\\"can_play\\\":true,\\\"can_persist\\\":true,\\\"can_renew\\\":false}}\"\r\n        },\r\n        \"restriction\": {\r\n          \"@odata.type\": \"#Microsoft.Media.ContentKeyPolicyOpenRestriction\"\r\n        }\r\n      }\r\n  ]\r\n}"
+							"raw": "{\n  \"properties\": {\n    \"description\": \"No DRM Token only - Clear Key\",\n    \"options\": [\n      {\n        \"name\": \"ClearKeyOption\",\n        \"configuration\": {\n          \"@odata.type\": \"#Microsoft.Media.ContentKeyPolicyClearKeyConfiguration\"\n        },\n        \"restriction\": {\n          \"@odata.type\": \"#Microsoft.Media.ContentKeyPolicyTokenRestriction\",\n          \"issuer\": \"urn:issuer\",\n          \"audience\": \"urn:audience\",\n          \"primaryVerificationKey\": {\n            \"@odata.type\": \"#Microsoft.Media.ContentKeyPolicySymmetricTokenKey\",\n            \"keyValue\": \"AAAAAAAAAAAAAAAAAAAAAA==\"\n          },\n          \"restrictionTokenType\": \"Jwt\"\n        }\n      }\n    ]\n  }\n}"
+						},
+						"url": {
+							"raw": "https://management.azure.com/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Media/mediaServices/:accountName/contentKeyPolicies/:contentKeyPolicyName?api-version={{api-version}}",
+							"protocol": "https",
+							"host": [
+								"management",
+								"azure",
+								"com"
+							],
+							"path": [
+								"subscriptions",
+								":subscriptionId",
+								"resourceGroups",
+								":resourceGroupName",
+								"providers",
+								"Microsoft.Media",
+								"mediaServices",
+								":accountName",
+								"contentKeyPolicies",
+								":contentKeyPolicyName"
+							],
+							"query": [
+								{
+									"key": "api-version",
+									"value": "{{api-version}}"
+								}
+							],
+							"variable": [
+								{
+									"key": "subscriptionId",
+									"value": "{{subscriptionId}}"
+								},
+								{
+									"key": "resourceGroupName",
+									"value": "{{resourceGroupName}}"
+								},
+								{
+									"key": "accountName",
+									"value": "{{accountName}}"
+								},
+								{
+									"key": "contentKeyPolicyName",
+									"value": "{{contentKeyPolicyName}}"
+								}
+							]
+						},
+						"description": "Create or update a Content Key Policy in the Media Services account"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Content Key Policy (PlayReady Open)",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{AccessToken}}",
+								"description": "Use the JWT Access Token from \"Step 1- Get AAD Auth Token\""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"properties\": {\r\n        \"policyId\": \"00000000-0000-0000-0000-000000000000\",\r\n        \"description\": \"PlayReady Open\",\r\n        \"options\": [\r\n          {\r\n            \"policyOptionId\": \"00000000-0000-0000-0000-000000000000\",\r\n            \"name\": \"ArmPolicyOptionName\",\r\n            \"configuration\": {\r\n              \"@odata.type\": \"#Microsoft.Media.ContentKeyPolicyPlayReadyConfiguration\",\r\n              \"licenses\": [\r\n                {\r\n                  \"allowTestDevices\": true,\r\n                  \"beginDate\": \"2017-10-16T18:22:53.46Z\",\r\n                  \"playRight\": {\r\n                    \"scmsRestriction\": 2,\r\n                    \"imageConstraintForAnalogComponentVideoRestriction\": true,\r\n                    \"allowPassingVideoContentToUnknownOutput\": \"NotAllowed\"\r\n                  },\r\n                  \"licenseType\": \"Persistent\",\r\n                  \"contentKeyLocation\": {\r\n                    \"@odata.type\": \"#Microsoft.Media.ContentKeyPolicyPlayReadyContentEncryptionKeyFromHeader\"\r\n                  },\r\n                  \"contentType\": \"UltraVioletDownload\"\r\n                }\r\n              ]\r\n            },\r\n            \"restriction\": {\r\n              \"@odata.type\": \"#Microsoft.Media.ContentKeyPolicyOpenRestriction\"\r\n            }\r\n          }\r\n        ]\r\n      }\r\n}\r\n"
+						},
+						"url": {
+							"raw": "https://management.azure.com/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Media/mediaServices/:accountName/contentKeyPolicies/:contentKeyPolicyName?api-version={{api-version}}",
+							"protocol": "https",
+							"host": [
+								"management",
+								"azure",
+								"com"
+							],
+							"path": [
+								"subscriptions",
+								":subscriptionId",
+								"resourceGroups",
+								":resourceGroupName",
+								"providers",
+								"Microsoft.Media",
+								"mediaServices",
+								":accountName",
+								"contentKeyPolicies",
+								":contentKeyPolicyName"
+							],
+							"query": [
+								{
+									"key": "api-version",
+									"value": "{{api-version}}"
+								}
+							],
+							"variable": [
+								{
+									"key": "subscriptionId",
+									"value": "{{subscriptionId}}"
+								},
+								{
+									"key": "resourceGroupName",
+									"value": "{{resourceGroupName}}"
+								},
+								{
+									"key": "accountName",
+									"value": "{{accountName}}"
+								},
+								{
+									"key": "contentKeyPolicyName",
+									"value": "{{contentKeyPolicyName}}"
+								}
+							]
+						},
+						"description": "Create or update a Content Key Policy in the Media Services account"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Content Key Policy (WideVine Token)",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{AccessToken}}",
+								"description": "Use the JWT Access Token from \"Step 1- Get AAD Auth Token\""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"properties\": {\r\n        \"description\": \"ArmPolicyDescription\",\r\n        \"options\": [\r\n          {\r\n            \"name\": \"widevineoption\",\r\n            \"configuration\": {\r\n              \"@odata.type\": \"#Microsoft.Media.ContentKeyPolicyWidevineConfiguration\",\r\n              \"widevineTemplate\": \"{\\\"allowed_track_types\\\":\\\"SD_HD\\\",\\\"content_key_specs\\\":[{\\\"track_type\\\":\\\"SD\\\",\\\"security_level\\\":1,\\\"required_output_protection\\\":{\\\"hdcp\\\":\\\"HDCP_V2\\\"}}],\\\"policy_overrides\\\":{\\\"can_play\\\":true,\\\"can_persist\\\":true,\\\"can_renew\\\":false}}\"\r\n            },\r\n            \"restriction\": {\r\n              \"@odata.type\": \"#Microsoft.Media.ContentKeyPolicyTokenRestriction\",\r\n              \"issuer\": \"urn:issuer\",\r\n              \"audience\": \"urn:audience\",\r\n              \"primaryVerificationKey\": {\r\n                \"@odata.type\": \"#Microsoft.Media.ContentKeyPolicyRsaTokenKey\",\r\n                \"exponent\": \"AQAB\",\r\n                \"modulus\": \"AQAD\"\r\n              },\r\n              \"alternateVerificationKeys\": [\r\n                {\r\n                  \"@odata.type\": \"#Microsoft.Media.ContentKeyPolicySymmetricTokenKey\",\r\n                  \"keyValue\": \"AAAAAAAAAAAAAAAAAAAAAA==\"\r\n                }\r\n              ],\r\n              \"restrictionTokenType\": \"Jwt\"\r\n            }\r\n          }\r\n        ]\r\n      }\r\n\r\n}\r\n"
+						},
+						"url": {
+							"raw": "https://management.azure.com/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Media/mediaServices/:accountName/contentKeyPolicies/:contentKeyPolicyName?api-version={{api-version}}",
+							"protocol": "https",
+							"host": [
+								"management",
+								"azure",
+								"com"
+							],
+							"path": [
+								"subscriptions",
+								":subscriptionId",
+								"resourceGroups",
+								":resourceGroupName",
+								"providers",
+								"Microsoft.Media",
+								"mediaServices",
+								":accountName",
+								"contentKeyPolicies",
+								":contentKeyPolicyName"
+							],
+							"query": [
+								{
+									"key": "api-version",
+									"value": "{{api-version}}"
+								}
+							],
+							"variable": [
+								{
+									"key": "subscriptionId",
+									"value": "{{subscriptionId}}"
+								},
+								{
+									"key": "resourceGroupName",
+									"value": "{{resourceGroupName}}"
+								},
+								{
+									"key": "accountName",
+									"value": "{{accountName}}"
+								},
+								{
+									"key": "contentKeyPolicyName",
+									"value": "{{contentKeyPolicyName}}"
+								}
+							]
+						},
+						"description": "Create or update a Content Key Policy in the Media Services account"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Content Key Policy (Multi-Options)",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{AccessToken}}",
+								"description": "Use the JWT Access Token from \"Step 1- Get AAD Auth Token\""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"properties\": {\r\n        \"description\": \"ArmPolicyDescription\",\r\n        \"options\": [\r\n          {\r\n            \"name\": \"ClearKeyOption\",\r\n            \"configuration\": {\r\n              \"@odata.type\": \"#Microsoft.Media.ContentKeyPolicyClearKeyConfiguration\"\r\n            },\r\n            \"restriction\": {\r\n              \"@odata.type\": \"#Microsoft.Media.ContentKeyPolicyTokenRestriction\",\r\n              \"issuer\": \"urn:issuer\",\r\n              \"audience\": \"urn:audience\",\r\n              \"primaryVerificationKey\": {\r\n                \"@odata.type\": \"#Microsoft.Media.ContentKeyPolicySymmetricTokenKey\",\r\n                \"keyValue\": \"AAAAAAAAAAAAAAAAAAAAAA==\"\r\n              },\r\n              \"restrictionTokenType\": \"Swt\"\r\n            }\r\n          },\r\n          {\r\n            \"name\": \"widevineoption\",\r\n            \"configuration\": {\r\n              \"@odata.type\": \"#Microsoft.Media.ContentKeyPolicyWidevineConfiguration\",\r\n              \"widevineTemplate\": \"{\\\"allowed_track_types\\\":\\\"SD_HD\\\",\\\"content_key_specs\\\":[{\\\"track_type\\\":\\\"SD\\\",\\\"security_level\\\":1,\\\"required_output_protection\\\":{\\\"hdcp\\\":\\\"HDCP_V2\\\"}}],\\\"policy_overrides\\\":{\\\"can_play\\\":true,\\\"can_persist\\\":true,\\\"can_renew\\\":false}}\"\r\n            },\r\n            \"restriction\": {\r\n              \"@odata.type\": \"#Microsoft.Media.ContentKeyPolicyOpenRestriction\"\r\n            }\r\n          }\r\n        ]\r\n      }\r\n}"
 						},
 						"url": {
 							"raw": "https://management.azure.com/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Media/mediaServices/:accountName/contentKeyPolicies/:contentKeyPolicyName?api-version={{api-version}}",
