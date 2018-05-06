@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "95a44a30-4f70-6966-4865-e426837451a2",
+		"_postman_id": "97901dfd-9f8a-41fe-9d6d-042c38bab852",
 		"name": "Media Services v3 (2018-03-30-preview)",
 		"description": "Azure Media Services v3 API Collection",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -120,22 +120,6 @@
 			"description": "Encoding Swagger",
 			"item": [
 				{
-					"name": "Example Transforms",
-					"description": "Various sample transforms showing off features",
-					"item": [],
-					"auth": {
-						"type": "bearer",
-						"bearer": [
-							{
-								"key": "token",
-								"value": "{{AccessToken}}",
-								"type": "string"
-							}
-						]
-					},
-					"_postman_isSubFolder": true
-				},
-				{
 					"name": "List Transforms",
 					"request": {
 						"method": "GET",
@@ -154,7 +138,10 @@
 								"value": "application/json"
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://management.azure.com/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Media/mediaServices/:accountName/transforms?api-version={{api-version}}",
 							"protocol": "https",
@@ -233,7 +220,10 @@
 								"value": "application/json"
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://management.azure.com/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Media/mediaServices/:accountName/transforms/getAvailablePresets?api-version={{api-version}}",
 							"protocol": "https",
@@ -298,7 +288,10 @@
 								"value": "application/json"
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://management.azure.com/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Media/mediaServices/:accountName/transforms/:transformName?api-version={{api-version}}",
 							"protocol": "https",
@@ -515,7 +508,10 @@
 								"value": "application/json"
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://management.azure.com/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Media/mediaServices/:accountName/transforms/:transformName?api-version={{api-version}}",
 							"protocol": "https",
@@ -657,7 +653,10 @@
 								"value": "application/json"
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://management.azure.com/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Media/mediaServices/:accountName/transforms/:transformName/jobs?api-version={{api-version}}",
 							"protocol": "https",
@@ -742,7 +741,10 @@
 								"value": "application/json"
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://management.azure.com/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Media/mediaServices/:accountName/transforms/:transformName/jobs/:jobName?api-version={{api-version}}",
 							"protocol": "https",
@@ -973,7 +975,10 @@
 								"value": "application/json"
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://management.azure.com/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Media/mediaServices/:accountName/transforms/:transformName/jobs/:jobName?api-version={{api-version}}",
 							"protocol": "https",
@@ -1048,7 +1053,10 @@
 								"value": "application/json"
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://management.azure.com/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Media/mediaServices/:accountName/transforms/:transformName/jobs/:jobName/cancelJob?api-version={{api-version}}",
 							"protocol": "https",
@@ -1058,7 +1066,6 @@
 								"com"
 							],
 							"path": [
-								"",
 								"subscriptions",
 								":subscriptionId",
 								"resourceGroups",
@@ -1163,7 +1170,10 @@
 								"value": "application/json"
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://management.azure.com/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Media/mediaServices/:accountName/assets?api-version={{api-version}}",
 							"protocol": "https",
@@ -1242,7 +1252,10 @@
 								"description": "Use the JWT Access Token from \"Step 1- Get AAD Auth Token\""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://management.azure.com/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Media/mediaServices/:accountName/assets/:assetName?api-version={{api-version}}",
 							"protocol": "https",
@@ -1455,7 +1468,10 @@
 								"description": "Use the JWT Access Token from \"Step 1- Get AAD Auth Token\""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://management.azure.com/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Media/mediaServices/:accountName/assets/:assetName?api-version={{api-version}}",
 							"protocol": "https",
@@ -1690,22 +1706,6 @@
 			"description": "Folder for subscriptions",
 			"item": [
 				{
-					"name": "Example Content Key Polices",
-					"description": "Example Content Key policies demonstrating various features. ",
-					"item": [],
-					"auth": {
-						"type": "bearer",
-						"bearer": [
-							{
-								"key": "token",
-								"value": "{{AccessToken}}",
-								"type": "string"
-							}
-						]
-					},
-					"_postman_isSubFolder": true
-				},
-				{
 					"name": "List Content Key Policies",
 					"request": {
 						"method": "GET",
@@ -1724,7 +1724,10 @@
 								"description": "Use the JWT Access Token from \"Step 1- Get AAD Auth Token\""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://management.azure.com/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Media/mediaServices/:accountName/contentKeyPolicies?api-version={{api-version}}",
 							"protocol": "https",
@@ -1788,7 +1791,10 @@
 								"description": "Use the JWT Access Token from \"Step 1- Get AAD Auth Token\""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://management.azure.com/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Media/mediaServices/:accountName/contentKeyPolicies/:contentKeyPolicyName?api-version={{api-version}}",
 							"protocol": "https",
@@ -2001,7 +2007,10 @@
 								"description": "Use the JWT Access Token from \"Step 1- Get AAD Auth Token\""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://management.azure.com/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Media/mediaServices/:accountName/contentKeyPolicies/:contentKeyPolicyName?api-version={{api-version}}",
 							"protocol": "https",
@@ -2070,7 +2079,10 @@
 								"description": "Use the JWT Access Token from \"Step 1- Get AAD Auth Token\""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://management.azure.com/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Media/mediaServices/:accountName/contentKeyPolicies/:contentKeyPolicyName/getPolicyPropertiesWithSecrets?api-version={{api-version}}",
 							"protocol": "https",
@@ -2178,7 +2190,10 @@
 								"description": "Use the JWT Access Token from \"Step 1- Get AAD Auth Token\""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://management.azure.com/providers/Microsoft.Media/operations?api-version={{api-version}}",
 							"protocol": "https",
@@ -2323,7 +2338,10 @@
 								"description": "Use the JWT Access Token from \"Step 1- Get AAD Auth Token\""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://management.azure.com/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Media/mediaservices?api-version={{api-version}}",
 							"protocol": "https",
@@ -2381,7 +2399,10 @@
 								"description": "Use the JWT Access Token from \"Step 1- Get AAD Auth Token\""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://management.azure.com/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Media/mediaservices/:mediaServiceName?api-version={{api-version}}",
 							"protocol": "https",
@@ -2576,7 +2597,10 @@
 								"description": "Use the JWT Access Token from \"Step 1- Get AAD Auth Token\""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://management.azure.com/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Media/mediaservices/:mediaServiceName?api-version={{api-version}}",
 							"protocol": "https",
@@ -2659,22 +2683,6 @@
 			"description": "Folder for subscriptions",
 			"item": [
 				{
-					"name": "Example Streaming Policies",
-					"description": "Example Streaming Policies demonstrating various features available",
-					"item": [],
-					"auth": {
-						"type": "bearer",
-						"bearer": [
-							{
-								"key": "token",
-								"value": "{{AccessToken}}",
-								"type": "string"
-							}
-						]
-					},
-					"_postman_isSubFolder": true
-				},
-				{
 					"name": "List Streaming Policies",
 					"request": {
 						"method": "GET",
@@ -2693,7 +2701,10 @@
 								"description": "Use the JWT Access Token from \"Step 1- Get AAD Auth Token\""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://management.azure.com/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Media/mediaServices/:accountName/streamingPolicies?api-version={{api-version}}",
 							"protocol": "https",
@@ -2772,7 +2783,10 @@
 								"description": "Use the JWT Access Token from \"Step 1- Get AAD Auth Token\""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://management.azure.com/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Media/mediaServices/:accountName/streamingPolicies/:streamingPolicyName?api-version={{api-version}}",
 							"protocol": "https",
@@ -2913,7 +2927,10 @@
 								"description": "Use the JWT Access Token from \"Step 1- Get AAD Auth Token\""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://management.azure.com/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Media/mediaServices/:accountName/streamingPolicies/:streamingPolicyName?api-version={{api-version}}",
 							"protocol": "https",
@@ -2982,7 +2999,10 @@
 								"description": "Use the JWT Access Token from \"Step 1- Get AAD Auth Token\""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://management.azure.com/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Media/mediaServices/:accountName/streamingLocators?api-version={{api-version}}",
 							"protocol": "https",
@@ -3061,7 +3081,10 @@
 								"description": "Use the JWT Access Token from \"Step 1- Get AAD Auth Token\""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://management.azure.com/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Media/mediaServices/:accountName/streamingLocators/:streamingLocatorName?api-version={{api-version}}",
 							"protocol": "https",
@@ -3202,7 +3225,10 @@
 								"description": "Use the JWT Access Token from \"Step 1- Get AAD Auth Token\""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://management.azure.com/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Media/mediaServices/:accountName/streamingLocators/:streamingLocatorName?api-version={{api-version}}",
 							"protocol": "https",
@@ -3271,7 +3297,10 @@
 								"description": "Use the JWT Access Token from \"Step 1- Get AAD Auth Token\""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://management.azure.com/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Media/mediaServices/:accountName/streamingLocators/:streamingLocatorName/listContentKeys?api-version={{api-version}}",
 							"protocol": "https",
@@ -3341,7 +3370,10 @@
 								"description": "Use the JWT Access Token from \"Step 1- Get AAD Auth Token\""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://management.azure.com/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Media/mediaServices/:accountName/streamingLocators/:streamingLocatorName/listPaths?api-version={{api-version}}",
 							"protocol": "https",
@@ -3431,12 +3463,6 @@
 			"description": "Folder for subscriptions",
 			"item": [
 				{
-					"name": "Example Live Events",
-					"description": "Example Live Event configurations demonstrating various features of the platform",
-					"item": [],
-					"_postman_isSubFolder": true
-				},
-				{
 					"name": "List Live Events",
 					"request": {
 						"method": "GET",
@@ -3455,7 +3481,10 @@
 								"description": "Use the JWT Access Token from \"Step 1- Get AAD Auth Token\""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://management.azure.com/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Media/mediaservices/:accountName/liveEvents?api-version={{api-version}}",
 							"protocol": "https",
@@ -3519,7 +3548,10 @@
 								"description": "Use the JWT Access Token from \"Step 1- Get AAD Auth Token\""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://management.azure.com/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Media/mediaservices/:accountName/liveEvents/:liveEventName?api-version={{api-version}}",
 							"protocol": "https",
@@ -3570,7 +3602,7 @@
 					"response": []
 				},
 				{
-					"name": "Create a Live Event",
+					"name": "Create a Live Event (pass-through)",
 					"request": {
 						"method": "PUT",
 						"header": [
@@ -3638,6 +3670,82 @@
 								{
 									"key": "liveEventName",
 									"value": "{{liveEventName}}"
+								}
+							]
+						},
+						"description": "Creates a Live Event."
+					},
+					"response": []
+				},
+				{
+					"name": "Create a Live Event (encoder)",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{AccessToken}}",
+								"description": "Use the JWT Access Token from \"Step 1- Get AAD Auth Token\""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n      \"location\":\"West Central US\",\r\n      \"tags\": {\r\n        \"createdBy\": \"user name\"\r\n      },\r\n      \"properties\": {\r\n        \"description\": \"Simple Live Event encoder for RTMP with 2-second keyframe interval and no ip restriction\",\r\n        \"input\": {\r\n          \"streamingProtocol\": \"RTMP\",\r\n          \"keyFrameIntervalDuration\": \"PT2S\"\r\n        },\r\n        \"preview\": {\r\n          \"accessControl\": {\r\n            \"ip\": {\r\n              \"allow\": [\r\n                {\r\n                  \"name\": \"AllowAll\",\r\n                  \"address\": \"0.0.0.0\"\r\n                }\r\n              ]\r\n            }\r\n          }\r\n        },\r\n        \"encoding\": {\r\n          \"encodingType\": \"Basic\",\r\n          \"presetName\": \"\"\r\n        },\r\n        \"streamOptions\": []\r\n      }\r\n    }"
+						},
+						"url": {
+							"raw": "https://management.azure.com/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Media/mediaservices/:accountName/liveEvents/:liveEventName?api-version={{api-version}}&autoStart=true",
+							"protocol": "https",
+							"host": [
+								"management",
+								"azure",
+								"com"
+							],
+							"path": [
+								"subscriptions",
+								":subscriptionId",
+								"resourceGroups",
+								":resourceGroupName",
+								"providers",
+								"Microsoft.Media",
+								"mediaservices",
+								":accountName",
+								"liveEvents",
+								":liveEventName"
+							],
+							"query": [
+								{
+									"key": "api-version",
+									"value": "{{api-version}}"
+								},
+								{
+									"key": "autoStart",
+									"value": "true"
+								}
+							],
+							"variable": [
+								{
+									"key": "subscriptionId",
+									"value": "{{subscriptionId}}"
+								},
+								{
+									"key": "resourceGroupName",
+									"value": "{{resourceGroupName}}"
+								},
+								{
+									"key": "accountName",
+									"value": "{{accountName}}"
+								},
+								{
+									"key": "liveEventName",
+									"value": "{{liveEventName}}2"
 								}
 							]
 						},
@@ -3736,7 +3844,10 @@
 								"description": "Use the JWT Access Token from \"Step 1- Get AAD Auth Token\""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://management.azure.com/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Media/mediaservices/:accountName/liveEvents/:liveEventName?api-version={{api-version}}",
 							"protocol": "https",
@@ -3805,7 +3916,10 @@
 								"description": "Use the JWT Access Token from \"Step 1- Get AAD Auth Token\""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://management.azure.com/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Media/mediaservices/:accountName/liveEvents/:liveEventName/start?api-version={{api-version}}",
 							"protocol": "https",
@@ -3948,7 +4062,10 @@
 								"description": "Use the JWT Access Token from \"Step 1- Get AAD Auth Token\""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://management.azure.com/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Media/mediaservices/:accountName/liveEvents/:liveEventName/reset?api-version={{api-version}}",
 							"protocol": "https",
@@ -4018,7 +4135,10 @@
 								"description": "Use the JWT Access Token from \"Step 1- Get AAD Auth Token\""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://management.azure.com/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Media/mediaservices/:accountName/liveEvents/:liveEventName/liveOutputs?api-version={{api-version}}",
 							"protocol": "https",
@@ -4088,7 +4208,10 @@
 								"description": "Use the JWT Access Token from \"Step 1- Get AAD Auth Token\""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://management.azure.com/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Media/mediaservices/:accountName/liveEvents/:liveEventName/liveOutputs/:liveOutputName?api-version={{api-version}}",
 							"protocol": "https",
@@ -4241,7 +4364,10 @@
 								"description": "Use the JWT Access Token from \"Step 1- Get AAD Auth Token\""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://management.azure.com/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Media/mediaservices/:accountName/liveEvents/:liveEventName/liveOutputs/:liveOutputName?api-version={{api-version}}",
 							"protocol": "https",
@@ -4316,7 +4442,10 @@
 								"description": "Use the JWT Access Token from \"Step 1- Get AAD Auth Token\""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://management.azure.com/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Media/mediaservices/:accountName/streamingEndpoints?api-version={{api-version}}",
 							"protocol": "https",
@@ -4380,7 +4509,10 @@
 								"description": "Use the JWT Access Token from \"Step 1- Get AAD Auth Token\""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://management.azure.com/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Media/mediaservices/:accountName/streamingEndpoints/:streamingEndpointName?api-version={{api-version}}",
 							"protocol": "https",
@@ -4597,7 +4729,10 @@
 								"description": "Use the JWT Access Token from \"Step 1- Get AAD Auth Token\""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://management.azure.com/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Media/mediaservices/:accountName/streamingEndpoints/:streamingEndpointName?api-version={{api-version}}",
 							"protocol": "https",
@@ -4666,7 +4801,10 @@
 								"description": "Use the JWT Access Token from \"Step 1- Get AAD Auth Token\""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://management.azure.com/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Media/mediaservices/:accountName/streamingEndpoints/:streamingEndpointName/start?api-version={{api-version}}",
 							"protocol": "https",
@@ -4736,7 +4874,10 @@
 								"description": "Use the JWT Access Token from \"Step 1- Get AAD Auth Token\""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://management.azure.com/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Media/mediaservices/:accountName/streamingEndpoints/:streamingEndpointName/stop?api-version={{api-version}}",
 							"protocol": "https",
@@ -4879,7 +5020,10 @@
 								"description": "Use the JWT Access Token from \"Step 1- Get AAD Auth Token\""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://management.azure.com/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Media/mediaservices/:accountName/streamingEndpoints?api-version={{api-version}}",
 							"protocol": "https",
