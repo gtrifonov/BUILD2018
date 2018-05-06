@@ -1,4 +1,5 @@
 # This sample uses the Visual Studio Code extension "Azure CLI Tools" to enable simple execution of CLI commands in VS Code.
+# Select a line and press CTRL+SHIFT+' to launch in Editor, or CTRL+SHIFT+' to launch in Terminal
 
 # Create a resource resourceGroupName
 az group create --name build2018 --location westcentralus
