@@ -1,5 +1,5 @@
 
-// Example Event Grid Subscription Validarion event for testing
+// Example Event Grid Subscription Validation event for testing
 [{
   "id": "2d1781af-3a4c-4d7c-bd0c-e34b19da4e66",
   "topic": "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
