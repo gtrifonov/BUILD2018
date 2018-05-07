@@ -21,3 +21,5 @@ az ams job show --name myFirstAudioAnalyzerJob --transform-name audioAnalyzerTra
 # Clean up first, to make sure this job name does not already exist. Change the job and transform name as needed.
 az ams job delete --name myFirstAudioAnalyzerJob --transform-name audioAnalyzerTransform  -a build18 -g build2018 
 az ams asset delete -n "outputAsset1" -a build18 -g build2018
+
+az ams job delete --name myFirstJob --transform-name encodeForStreaming  -a build18 -g build2018 

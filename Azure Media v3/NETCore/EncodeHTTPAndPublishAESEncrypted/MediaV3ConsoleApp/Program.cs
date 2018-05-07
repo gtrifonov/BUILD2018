@@ -15,7 +15,7 @@ using Microsoft.Azure.Management.Media.Models;
 using Microsoft.WindowsAzure.Storage.Blob;
 using Newtonsoft.Json;
 
-namespace AnalyzeVideos
+namespace EncodeAndStream
 {
     class Program
     {
