@@ -170,7 +170,9 @@ namespace EncodeVideosCustomTransform
                                     filenamePattern:"Thumbnail-{Basename}-{Index}{Extension}"
                                 )
                             }
-                        )
+                        ),
+                        onError: OnErrorType.StopProcessingJob,
+                        relativePriority: Priority.Normal
                     )
                 };
 
