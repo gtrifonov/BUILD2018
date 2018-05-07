@@ -44,7 +44,7 @@ namespace EncodeVideosCustomTransform
                 var input = new JobInputHttp(
                                     baseUri: "https://nimbuscdn-nimbuspm.streaming.mediaservices.windows.net/2b533311-b215-4409-80af-529c3e853622/",
                                     files: new List<String> {"Ignite-short.mp4"}
-                                    );
+                                );
                 
                 // Out from the Job must be written to an Asset, so let's create one
                 CreateOutputAsset(client, outputAssetName);
@@ -101,6 +101,7 @@ namespace EncodeVideosCustomTransform
             // Does a Transform already exist with the desired name? Assume that an existing Transform with the desired name
             // also uses the same recipe or Preset for processing content.
             Transform transform = client.Transforms.Get(resourceGroupName, accountName, transformName);
+
 
             if (transform == null)
             {
@@ -173,8 +174,9 @@ namespace EncodeVideosCustomTransform
                     )
                 };
 
+                string description = "A simple custom encoding transform with 2 MP4 bitrates";
                 // Create the custom Transform with the outputs defined above
-                transform = client.Transforms.CreateOrUpdate(resourceGroupName, accountName, transformName, outputs);
+                transform = client.Transforms.CreateOrUpdate(resourceGroupName, accountName, transformName, outputs, description);
             }
 
             return transform;
