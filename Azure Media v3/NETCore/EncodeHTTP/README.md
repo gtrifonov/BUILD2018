@@ -9,9 +9,9 @@ Open this folder directly (seperately) in Visual Studio Code.
 
 
 ## Required Assemblies in the project
-•	Microsoft.Azure.Management.Media -Version 1.0.0
-•	Microsoft.IdentityModel.Clients.ActiveDirectory -Version 3.19.4
-•	WindowsAzure.Storage  -Version 9.1.1
+- Microsoft.Azure.Management.Media -Version 1.0.0
+- Microsoft.IdentityModel.Clients.ActiveDirectory -Version 3.19.4
+- WindowsAzure.Storage  -Version 9.1.1
 
 ## Update the App.config
 
